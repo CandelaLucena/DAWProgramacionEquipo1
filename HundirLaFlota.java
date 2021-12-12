@@ -1,6 +1,4 @@
-package Arrays;
 
-import java.util.Scanner;
 
 public class HundirLaFlota {
     public static void createShips(int numShips, int[][] shipPlaces) {
@@ -16,36 +14,68 @@ public class HundirLaFlota {
             }
         }
     }
-    public static void main(String[] args) {
-        Scanner lector = new Scanner (System.in);
-        int numerobarcosvivos=8;
-        int columna;
-        int fila;
-        int[][] shipPlaces=new int[8][8];
-        createShips(10, shipPlaces);
-       
-      
-    
 
+    public static void imprimirTablero(int[][] tablero) {
+        char letra = 'A';
+        System.out.println("  1 2 3 4 5 6 7 8");
+
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print(letra + " ");
+            letra++;
+            for (int j = 0; j < tablero.length; j++) {
+                switch (tablero[i][j]) {
+                    case 0:
+                    case 1:
+                        System.out.print(". ");
+                        break;
+                    case 2:
+                        System.out.print("O ");
+                        break;
+                    case 3:
+                        System.out.print("X ");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+
+
+
+        int[][] tablero = { {1, 0, 0, 0, 0, 0, 0, 0},
+                            {0, 1, 0, 0, 0, 0, 0, 1},
+                            {0, 0, 0, 0, 0, 0, 0, 0},
+                            {0, 0, 1, 0, 0, 0, 0, 0},
+                            {1, 0, 0, 0, 0, 1, 0, 0},
+                            {0, 0, 0, 1, 0, 0, 0, 1},
+                            {0, 0, 0, 1, 0, 0, 0, 0},
+                            {0, 0, 1, 0, 0, 0, 0, 0}};
+
+
+
+
+        imprimirTablero(tablero);
+       
+        int numerobarcosvivos=8;
+        
        while(numerobarcosvivos!=0){
 
-        System.out.println("introduce columna:");
-        columna = lector.nextInt();
+        char row = Utilidades.leerCaracter("Enter row(Letter): ");
+        int columnNumber = Utilidades.leerEntero("Enter column(Number): ");
+        int rowNumber = row - 'A';
+        columnNumber--;
 
-        System.out.println("introduce fila:");
-        fila = lector.nextInt();
-
-        if(shipPlaces[fila][columna]==1){
-
-            System.out.println("DADO");
-
-        }else{
-
-            System.out.println("AGUA");
-
-
+    
+        if (tablero[rowNumber][columnNumber] == 0 || tablero[rowNumber][columnNumber] == 1){
+            tablero[rowNumber][columnNumber] += 2;
         }
 
+        imprimirTablero(tablero);
 
 
 
