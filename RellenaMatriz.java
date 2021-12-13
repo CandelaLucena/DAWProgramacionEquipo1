@@ -10,9 +10,9 @@ public class RellenaMatriz {
         int i,j; 
         int filas = matriz.length;
         int columnas = matriz[0].length;
-        // Recorrido de las filas de la matriz
+        
         for (i=0; i < filas; i++) {
-                // Recorrido de las celdas de una fila
+                
                 for (j=0; j<columnas; j++) {
                     System.out.println("matriz[" + i + "][" + j + "]=" + matriz[i][j] );
             }
