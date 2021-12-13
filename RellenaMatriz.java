@@ -14,7 +14,7 @@ public class RellenaMatriz {
         for (i=0; i < filas; i++) {
                 
                 for (j=0; j<columnas; j++) {
-                    System.out.println(matriz[i][j]+" ");
+                    System.out.print(matriz[i][j]+" ");
             }
             System.out.println();
         }
