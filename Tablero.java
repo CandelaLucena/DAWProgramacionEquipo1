@@ -1,4 +1,5 @@
 public class Tablero { 
+    //Comentado por: Carlos Navarro Segarra.
 
     public static int[] rellenaArray(int tamano, int min, int max) {
         //Rellena un array nuevo de un tamaño con numeros aleatorios
@@ -11,6 +12,15 @@ public class Tablero {
 		}
         return array;
     }
+
+        //Es verdad que hacerlo en dos pasos puede añadir algo de estabilidad,
+        //pero puedes saltarte un paso y ahorrar memoria de variables si utilizas el método
+        //de rellenar con la matriz directamente.
+                //for (int i = 0; i < tablero.length; i++) {
+            //for (int j = 0; j < tablero.length; j++) {
+                //tablero[i][j] = (int) (Math.random() * (max - min + 1) + min);
+            //}
+        //}
 
     public static int[][] agregarMatriz(int[][] lista, int[] aagregar) {
         //Agrega una fila en una matriz
@@ -53,7 +63,7 @@ public class Tablero {
         String[] filainfo = {" ", "1","2","3","4","5","6","7","8"},
         columnainfo = {" ", "A","B","C","D","E","F","G","H"};
 
-        
+        //Esta metodología me gusta mucho, está muy bien, da muy buenos resultados, enhorabuena.  
         //Copia la natrizInt en la matrizStr, pero codificandola
         for (int i = 0; i < matrizInt.length; i++) {
             for (int j = 0; j < matrizInt[1].length; j++) {
@@ -68,6 +78,7 @@ public class Tablero {
                 }
             }
         }
+        //;)
     
 
         //Añado la leyenda
@@ -88,3 +99,5 @@ public class Tablero {
         }
     }
 }
+//Tu programa estyá muy bien, tienes un muy buen manejo de los métodos y el programa utiliza
+//un número muy limitado de recursos.
